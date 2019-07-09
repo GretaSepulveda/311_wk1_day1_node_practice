@@ -1,23 +1,20 @@
 const isEven = (num) => {
-  // write code for numbers.isEven
-if (num % 2 === 0) {
-  return true;
-  } else if(num2 % 3 === 1){
-    return false;
+  if(num % 2 === 0) {
+    return true
   }
 }
+
 const sum = (arr) => {
-  // write code for numbers.sum
-return (arr.length === 0) ? 0 : arr[0] + sum(arr.slice(1));
-}
-function sum(arr){
   return (arr.length === 0) ? 0 : arr[0] + sum(arr.slice(1));
 }
-const comboSum = (arr, sum) => {
-  // write code for numbers.comboSum
-let thisSum = sumIT(arr)
-console.log(thisSum === num) {
-return true
+
+function sumIt(arr){
+  return (arr.length === 0) ? 0 : arr[0] + sumIt(arr.slice(1));
+}
+const comboSum = (arr, num) => {
+  let thisSum = sumIt(arr)
+  if(thisSum === num) {
+    return true
   } else {
     return false
   }
