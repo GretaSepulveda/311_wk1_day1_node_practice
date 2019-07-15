@@ -1,36 +1,29 @@
-const moment = require('moment');
+// import moment here; use this package in each function
+const moment = require("moment");
 
+//today
 const today = () => {
-  const days = {
-    0: "Sunday",
-    1: "Monday",
-    2: "Tuesday",
-    3: "Wednesday",
-    4: "Thursday",
-    5: "Friday",
-    6: "Saturday"
-  }
-  const intToday = moment().weekday()
-  const strToday = days[intToday]
-  return strToday
-}
+  const day = moment().format("dddd");
+  console.log("Today is: ",day);
+  return day;
+};
 
+//calendar
 const calendar = () => {
-  const formattedMonth = moment().format('MMM');
-  const formattedDay = moment().format('DD');
-  const formattedYear = moment().format('YYYY');
-  const wholeDate = `${formattedMonth} ${formattedDay}, ${formattedYear}`
-  // console.log(wholeDate)
-  return wholeDate
-}
-// calendar()
+  const date = moment().format("LL");
+  console.log("Today's date is:", date);
+  return date;
+};
+
+//currentTime
 const currentTime = () => {
-  const formattedTime = moment().format('LTS');
-  return formattedTime
-}
-// currentTime()
+  const time = moment().format('hLTS')
+  console.log("The current time is: ", time)
+  return time
+};
+
 module.exports = {
   today,
   calendar,
   currentTime
-}
+};

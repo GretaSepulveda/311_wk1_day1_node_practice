@@ -1,40 +1,31 @@
+//split
 const split = (str, delim) => {
+  console.log("Split Array: ", str.split(delim))
   return str.split(delim)
 }
 
+//pairs
 const pairs = (str) => {
   let strArr = Array.from(str)
-  let joinedArray = []
-  while(strArr.length > 0) {
-    console.log("COUNT")
-    let chunks = [strArr[0], strArr[1]]
-    strArr = strArr.slice(2, strArr.length)
+  let pairs = []
+  for (let i = 0; i < strArr.length; i+=2) {
+    // console.log(index)
+    let element = strArr[i]
+    let chunks = [element, strArr[i + 1]]
     let joinedChunks = chunks.join('')
-    joinedArray.push(joinedChunks)
+    console.log(joinedChunks)
+    pairs.push(joinedChunks)
   }
-  console.log(joinedArray)
-  // for (let index = 0; index < strArr.length; index+=2) {
-  //   console.log(index)
-  //   let element = strArr[index]
-  //   let chunks = [element, strArr[index + 1]]
-  //   let joinedChunks = chunks.join('')
-  //   console.log(joinedChunks)
-  // }
-  // var new_array = strArr.map((currentValue, index, array) => {
-  //   console.log(index)
-  //   if (index % 2 !== 0) {
-  //     let chunks = [array[index - 1], currentValue]
-  //     let joinedChunks = chunks.join('')
-  //     console.log(joinedChunks)
-  //   }
-  // })
+  return pairs
 }
-pairs('abcdefghijklmnop')
+// pairs('abcdefghijklmnop')
 
+//reverse
 const reverse = (str) => {
   let splitString = str.split("");
   let reverseArray = splitString.reverse();
   var joinArray = reverseArray.join("");
+  console.log("Reverse: ",joinArray)
   return joinArray;
 }
 
